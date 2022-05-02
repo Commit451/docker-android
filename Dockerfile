@@ -8,6 +8,6 @@ ENV GRADLE_VERSION "7.4.2"
 ENV PATH $PATH:/usr/local/gradle-${GRADLE_VERSION}/bin
 RUN URL=https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip && \
     curl -sSL -o /tmp/gradle.zip $URL && \
-    sudo unzip -d /usr/local /tmp/gradle.zip && \
+    sudo unzip -d -o /usr/local /tmp/gradle.zip && \
     rm -rf /tmp/gradle.zip
 # End Install newer gradle
