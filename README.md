@@ -1,7 +1,9 @@
 # docker-android
-Docker configuration for Android builds
+Docker configuration for Android builds.
 
 Based on https://circleci.com/developer/images/image/cimg/android
+
+See source [here](https://github.com/CircleCI-Public/cimg-android)
 
 ## License
 
