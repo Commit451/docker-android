@@ -1,0 +1,23 @@
+name: 'Publish Docker image tag to Docker Hub'
+
+on:
+  push:
+    tags:        
+      - *
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set env
+      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+    - name: Docker login
+      run: 'docker login -u jawnnypoo -p ${{ secrets.DOCKER_HUB_PASSWORD }}'
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag commit451/docker-android:${{ env.RELEASE_VERSION }}
+    - name: Push the Docker image
+      run: docker push commit451/docker-android
