@@ -20,4 +20,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag commit451/docker-android:${{ env.RELEASE_VERSION }}
     - name: Push the Docker image
-      run: docker push commit451/docker-android
+      run: docker push commit451/docker-android:${{ env.RELEASE_VERSION }}
