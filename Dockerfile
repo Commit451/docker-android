@@ -1,4 +1,4 @@
-FROM cimg/android:2023.02.1
+FROM cimg/android:2023.06
 
 RUN java -version
 RUN ruby --version
